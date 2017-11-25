@@ -1,9 +1,10 @@
 require('app-module-path').addPath(__dirname + '/src')
 
-const Koa = require('koa')
+const Koa        = require('koa')
 const bodyparser = require('koa-bodyparser')
-const json = require('koa-json')
-const router = require('router')
+const json       = require('koa-json')
+const router     = require('router')
+const logger     = require('logger')
 
 const app = new Koa()
 app
@@ -14,5 +15,5 @@ app
 
 const PORT = process.env.PORT || 9000;
 app.listen(PORT,function(){
-	console.log("Server listening on port "+PORT)
+	logger.info("Server listening on port "+PORT)
 });
