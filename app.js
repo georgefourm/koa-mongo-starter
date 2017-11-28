@@ -5,11 +5,13 @@ const bodyparser = require('koa-bodyparser')
 const json       = require('koa-json')
 const router     = require('router')
 const logger     = require('logger')
+const errors	 = require('middleware/errors')
 
 const app = new Koa()
 app
 .use(bodyparser())
 .use(json())
+.use(errors)
 .use(router.routes())
 .use(router.allowedMethods())
 
