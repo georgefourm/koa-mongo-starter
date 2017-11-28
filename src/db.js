@@ -10,7 +10,7 @@ const build_conn_string = () => {
 	string += `${config.get('host')}`
 
 	if (config.has('database')) {
-		string += `${config.get('database')}`
+		string += `/${config.get('database')}`
 	}
 
 	return string
@@ -21,4 +21,4 @@ mongoose.connect(build_conn_string(), {
 	promiseLibrary: Promise
 })
 
-module.exports = mongoose
+module.exports = { mongoose, build_conn_string }
