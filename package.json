@@ -12,9 +12,9 @@
     "boilerplate",
     "backend"
   ],
-  "repository" :{ 
-    "type" : "git", 
-    "url" : "https://github.com/georgesdoe/koa-mongo-starter.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgesdoe/koa-mongo-starter.git"
   },
   "author": "George Fourmouzis",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "app-module-path": "^2.2.0",
     "bcrypt": "^1.0.3",
     "config": "^1.28.1",
+    "jsonwebtoken": "^8.1.0",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
