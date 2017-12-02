@@ -1,4 +1,5 @@
 require('app-module-path').addPath(__dirname + '/src')
+const config = require('config')
 
 const Koa        = require('koa')
 const bodyparser = require('koa-bodyparser')
@@ -16,7 +17,7 @@ app
 .use(router.routes())
 .use(router.allowedMethods())
 
-const PORT = process.env.PORT || 9000;
+const PORT = config.get('app.port');
 app.listen(PORT,function(){
 	console.log("Server listening on port "+PORT)
 });
