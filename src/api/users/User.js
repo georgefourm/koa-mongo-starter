@@ -1,4 +1,4 @@
-const { mongoose } = require('db')
+const { mongoose } = require('lib/db')
 
 const userSchema = mongoose.Schema({
     name  : String,

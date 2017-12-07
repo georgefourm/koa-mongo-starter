@@ -4,7 +4,7 @@ const Koa        = require('koa')
 const bodyparser = require('koa-bodyparser')
 const json       = require('koa-json')
 const logger     = require('koa-logger')
-const router     = require('router')
+const router     = require('api/router')
 const errors	 = require('middleware/errors')
 
 const app = new Koa()

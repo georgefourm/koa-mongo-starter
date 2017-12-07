@@ -1,4 +1,4 @@
-const logger = require('logger')
+const logger = require('lib/logger')
 
 module.exports = async (ctx, next) => {
   try {
@@ -6,7 +6,6 @@ module.exports = async (ctx, next) => {
   } catch (err) {
   	// Http status code
     ctx.status = err.statusCode || err.status || 500
-  	
 
     //Only log 5xx errors
   	if (ctx.status >= 500) {	
