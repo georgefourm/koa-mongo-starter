@@ -58,4 +58,4 @@ typings/
 .env
 
 # local config file
-src/config/local*
+config/local*
