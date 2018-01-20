@@ -7,18 +7,22 @@ const build_conn_string = () => {
 		string += `${config.get('username')}:${config.get('password')}`
 	}
 
-	string += `${config.get('host')}`
+	string += `@${config.get('host')}`
 
 	if (config.has('database')) {
 		string += `/${config.get('database')}`
+	}else{
+		string += '/'
 	}
-
+	
+	string += "?authSource=admin"
 	return string
 }
 
+mongoose.Promise = Promise
+
 mongoose.connect(build_conn_string(), { 
 	useMongoClient: true, 
-	promiseLibrary: Promise
 })
 
 module.exports = { mongoose, build_conn_string }
