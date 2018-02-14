@@ -3,6 +3,9 @@
 		"host"    : "localhost",
 		"port"	  : 27017
 	},
+	"jwt": {
+		"secret"  : "da61164c8c96335f6f53236a81ba4520015203d3847f829f8476e11c5cc40111"
+	},
 	"app" : {
 		"port" : 9000
 	}
