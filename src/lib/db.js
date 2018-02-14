@@ -21,8 +21,6 @@ const build_conn_string = () => {
 
 mongoose.Promise = Promise
 
-mongoose.connect(build_conn_string(), { 
-	useMongoClient: true, 
-})
+mongoose.connect(build_conn_string())
 
 module.exports = { mongoose, build_conn_string }
