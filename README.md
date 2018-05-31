@@ -2,6 +2,8 @@
 A boilerplate [koaJS](http://koajs.com/) setup, using MongoDB as the backend database, 
 structured in a sensible way, including common libraries for routing, configuration, logging, and database access.
 
+Helper functions are also provided for JWT token authentication and templated view rendering. 
+
 ## Motivation
 KoaJS is a very minimalistic, unopinionated node framework, providing a thin layer of abstraction 
 over the base node libraries, and while this provides the developer with maximum flexibility,
@@ -18,7 +20,17 @@ Simply run `npm install` to fetch dependencies
 ## Usage
 
 For development purposes, if you have [nodemon](https://nodemon.io/) installed, 
-you can run the application using `npm run start`or simply `nodemon app`
+you can run the application using `npm run start`or simply `nodemon app`. 
+
+A couple of convenience functions are provided in the `ctx` via the corresponding middleware:
+
+- `ctx.jwt([token])` returns a promise that resolves to the decoded JWT token provided in the `Authorization` header.
+- `ctx.render(file[,options])` sets the response body to the rendered output of the provided pug template in `src/front/templates`.
+
+*Note:* When using JWT functionality, remember to set the `jwt.secret` config option to a sensible key.
+The helper function expects the `Authorization` header to have the following format: `Bearer <token>` 
+in order for it to parse the token correctly. If the header is missing or malformed, a 400 exception will be thrown.
+If the token is invalid, the promise returned will be rejected.
 
 ## Libraries
 
