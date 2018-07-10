@@ -18,7 +18,7 @@ const parseAuthHeader = ctx => {
 }
 
 module.exports = async (ctx,next) => {
-    ctx.jwt = (token = null) => {
+    ctx.jwt = ((token = null) => {
         
         if (token == null) {
             token = parseAuthHeader(ctx)
@@ -34,6 +34,6 @@ module.exports = async (ctx,next) => {
                 }
             )
         })
-    }
+    })()
     await next()
 }
